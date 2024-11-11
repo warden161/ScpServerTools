@@ -25,15 +25,16 @@ public partial class InstallScp : ContentPage
 			return;
 
         var folder = MainPage.Instance.ScpInstallPath();
+        var localadmin = Path.Combine(folder, "LocalAdmin.exe");
         Debug.WriteLine(folder);
-        if (!Directory.Exists(folder))
+        if (!Directory.Exists(folder) || !File.Exists(localadmin))
         {
             await DisplayAlert("Error", "The game is not downloaded yet.", "OK");
             return;
         }
 
         MainPage.InstallFolder = folder;
-        Process.Start(new ProcessStartInfo(Path.Combine(folder, "LocalAdmin.exe")) { Arguments = "7777", UseShellExecute = true, WorkingDirectory = folder });
+        Process.Start(new ProcessStartInfo(localadmin) { Arguments = "7777", UseShellExecute = true, WorkingDirectory = folder });
         await DisplayAlert("Alert", "ScpTools is launching the server. Please close it when you see Waiting for players... in the server console & return to this window afterwards.", "OK");
         await Navigation.PopAsync();
     }
