@@ -1,0 +1,1 @@
+dotnet publish -r win-x64 -p:PublishSingleFile=true -c Release --no-self-contained

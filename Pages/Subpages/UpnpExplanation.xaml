@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScpServerTools.Pages.Subpages.UpnpExplanation"
+             Title="What is UPnP">
+    <VerticalStackLayout>
+        <Label 
+            Text="UPnP allows your friends to join you without needing to port forward. If you've already port forwarded, you can ignore this feature."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="If you haven't setup port forwarding, I recommend you use the plugin so your friends can join. However, you need to enable UPnP in your router settings if it isn't (usually is)"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <!-- Regular text -->
+                    <Span Text="Watch this guide on how to enable UPnP: " />
+                    <!-- Clickable YouTube URL -->
+                    <Span Text="https://www.lifewire.com/enable-upnp-on-a-router-5206124" 
+                          TextColor="Blue" 
+                          TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnUrlTapped" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScpServerTools.Pages.ServerManager"
+             Title="Server Manager">
+    <VerticalStackLayout>
+        <VerticalStackLayout>
+            <VerticalStackLayout HorizontalOptions="StartAndExpand" Padding="9,15,4,30"  Spacing="9">
+                <Label
+                    Text="Manager Features"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource SubHeadline}"
+                    SemanticProperties.HeadingLevel="Level3" />
+
+
+                <HorizontalStackLayout Spacing="7" Padding="0,0,0,0" VerticalOptions="End">
+                    <Entry IsSpellCheckEnabled="false" IsTextPredictionEnabled="false" Placeholder="Enter Steam ID 64 here..." x:Name="AdminInput" MinimumWidthRequest="100" MaximumHeightRequest="100"/>
+                    <Button
+                        Text="Add Admin"
+                        HorizontalOptions="Start"
+                        Clicked="OnAddAdmin" />
+                    <Button
+                        Text="How do I find SteamID64?"
+                        HorizontalOptions="Start"
+                        Clicked="GuideSteamID64" 
+                        Margin="15,0,0,0"/>
+                </HorizontalStackLayout>
+                <VerticalStackLayout Padding="3,30,3,0" Spacing="10" VerticalOptions="End" HorizontalOptions="Fill">
+                    <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                        <Button
+                            Text="Install UPnP plugin"
+                            Clicked="InstallUPnP"
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="Center"
+                        />
+                        <Button x:Name="InfoButton"
+                            BackgroundColor="Transparent"
+                            Grid.Column="1"
+                            Padding="5"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            HorizontalOptions="End" 
+                            VerticalOptions="Center"
+                            Clicked="InfoButton_Clicked">
+                            <Button.ImageSource>
+                                <FileImageSource File="info.png" />
+                            </Button.ImageSource>
+                        </Button>
+
+                    </Grid>
+                    <Button
+                        Text="How can my friends join"
+                        HorizontalOptions="Fill"
+                        Clicked="GetIp" />
+                    <Button
+                        Text="Open Plugins Folder"
+                        HorizontalOptions="Fill"
+                        Clicked="Button_Clicked" />
+                    <Button
+                        Text="Start Server"
+                        HorizontalOptions="Fill"
+                        Clicked="StartServer" />
+
+                </VerticalStackLayout>
+
+
+            </VerticalStackLayout>
+            <VerticalStackLayout HorizontalOptions="StartAndExpand" Padding="9,9,9,40" Spacing="5">
+                <Label
+                    Text="Server Information"
+                    Style="{StaticResource SubHeadline}"
+                    HorizontalOptions="Start"
+                    SemanticProperties.HeadingLevel="Level3" />
+                <Label
+                    x:Name="ServerPort"
+                    Text="Server Port"
+                    SemanticProperties.HeadingLevel="Level5"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="Description" />
+                <Label
+                    x:Name="InstallationPath"
+                    Text="Installation Path"
+                    SemanticProperties.HeadingLevel="Level5"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="Description" />
+                <Label
+                    x:Name="ConfigPath"
+                    Text="Config Path"
+                    SemanticProperties.HeadingLevel="Level5"
+                    HorizontalOptions="Start"
+                    SemanticProperties.Description="Description" />
+            </VerticalStackLayout>
+            <Button Margin="20,0,20,0"
+                       Text="Return Home"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="End"
+                       Clicked="ReturnHome" />
+        </VerticalStackLayout>
+        <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

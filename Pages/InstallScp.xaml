@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScpServerTools.Pages.InstallScp"
+             Title="Install SCP:SL server">
+    <VerticalStackLayout Spacing="20" Padding="10">
+        <Label 
+            Text="Error: seems like SCPSL dedicated server is not installed!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            x:Name="Description"
+            Text="Click the button below to automatically install it."
+            Style="{StaticResource SubHeadline}"
+            SemanticProperties.HeadingLevel="Level2"
+            SemanticProperties.Description="Description" />
+
+        <Button
+            x:Name="BeginBtn"
+            Text="Download" 
+            SemanticProperties.Hint="Starts setup"
+            Clicked="OnBeginClicked"
+            HorizontalOptions="Center"
+            WidthRequest="500"
+            />
+        <Button
+            x:Name="CompletedBtn"
+            Text="Completed" 
+            SemanticProperties.Hint="Completes setup"
+            Clicked="OnCompleted"
+            IsVisible="False"
+            WidthRequest="500"
+            HorizontalOptions="CenterAndExpand"/>
+    </VerticalStackLayout>
+</ContentPage>
